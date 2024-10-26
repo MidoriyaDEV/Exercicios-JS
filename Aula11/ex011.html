@@ -1,0 +1,32 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema da alfandega</title>
+ </head>
+ <body>
+    <h1><strong>SISTEMA DA ALFANDEGA</strong></h1>
+    <strong>Nacionalidade:</strong> <input type="text" name="txtnac" id="txtnac">
+    <input type="button" value="Verificar" onclick="estrangeiro()">
+    <div id="res"></div>
+
+ </body>
+ <script>
+   function estrangeiro() {
+            var txtnac = document.getElementById('txtnac');  // Captura o input de nacionalidade
+            var res = document.getElementById('res');        // Captura a div onde o resultado será exibido
+            var nacionalidade = txtnac.value.trim();         // Pega o valor do input
+
+            // Exibe a nacionalidade inserida
+            res.innerHTML = `<p>Sua nacionalidade atual é <strong>${nacionalidade}</strong>.</p>`;
+            
+            // Verifica se a nacionalidade é estrangeira (apenas um exemplo simples de condição)
+            if (nacionalidade.toLowerCase() !== 'brasileira') {
+                res.innerHTML += `<p>Você é estrangeiro.</p>`;
+            } else {
+                res.innerHTML += `<p>Você é brasileiro.</p>`;
+            }
+        }
+ </script>
+ </html>
